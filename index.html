@@ -17,7 +17,7 @@
     </div>
 
     <!-- main content  -->
-    <div id="container" class="clearfix">
+    <div id="container-app" class="clearfix">
         <!-- col-sx  -->
         <div id="col-sx">
             <!-- user name  -->
@@ -60,7 +60,22 @@
 
             <!-- contact list  -->
             <section id="contact-list">
-                <div class="contact clearfix" >
+                <div class="contact clearfix" v-for="contact in contacts">
+                    <div class="info-contact">
+                        <img :src="contact.avatar" :alt="contact.name" class="avatar" >
+
+                        <div class="text-container">
+                            <span>{{contact.name}}</span>
+                            <div>Ultimo messaggio</div>
+                        </div>
+                    </div>
+
+                    <div class="chat-date">
+                        10/01/2020 16:15:22
+                    </div>
+                </div>
+
+                <!-- <div class="contact clearfix" >
                     <div class="info-contact">
                         <img src="img/avatar_1.jpg" alt="profile image" class="avatar" >
 
@@ -118,7 +133,7 @@
                     <div class="chat-date">
                         10/01/2020 15:50:00
                     </div>
-                </div>
+                </div> --> 
                 
             </section>
         </div>
