@@ -45,8 +45,8 @@
 
                 <!-- text  -->
                 <div id="notifications-text">
-                    <span>Ricevi notifiche di nuovi messaggi</span>
-                    <!-- <span>Attiva notifiche desktop</span> -->
+                    <div>Ricevi notifiche di nuovi messaggi</div>
+                    <span>Attiva notifiche desktop</span>
                 </div>
 
             </div>
@@ -60,7 +60,7 @@
 
             <!-- contact list  -->
             <section id="contact-list">
-                <div class="contact clearfix" v-for="contact in contacts">
+                <div class="contact clearfix" v-for="contact,i in contacts">
                     <div class="info-contact">
                         <img :src="contact.avatar" :alt="contact.name" class="avatar" >
 

@@ -83,21 +83,29 @@
     height: 70px;
     background-color: rgba(142,218,252,255);
     padding: 0 20px;
-    line-height: 70px;
+    display: flex;
+    align-items: center;
 }
 
 #notifications #avatar-notif {
-    font-size: 25px;
-    padding: 15px;
+    font-size: 20px;
     color: rgba(142,218,252,255);
     border-radius: 50%;
     background-color: white;
-    vertical-align: middle;
+    padding: 15px 10px;
+    margin-right: 15px;
 }
 
-#notifications #notifications-text {
-    display: inline;
+#col-sx #notifications-text div {
+    font-weight: bold;
 }
+
+#col-sx #notifications-text span {
+    font-size: 12px;
+    text-decoration: underline;
+    color: rgb(99 105 108);
+}
+
 
 /* search  */
 #col-sx #search {
@@ -112,6 +120,7 @@
 #col-sx #search .fas {
     margin: 0 20px;
 }
+
 
 
 
