@@ -205,4 +205,18 @@
 #col-dx #new-msg {
     height: 70px; 
     background-color: rgba(243,238,234,255);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#col-dx #new-msg i {
+    font-size: 20px;
+    color: rgba(106,115,118,255);
+}
+
+#message-input {
+    width: 800px;
+    padding: 10px;
+    border: none;
 }
