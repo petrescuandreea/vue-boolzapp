@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/style.css">
     <title>BoolzApp</title>
 </head>
@@ -11,31 +12,156 @@
 
     <!-- background  -->
     <div class="background">
-        <div id="bk-top">
-        <div id="bk-down"></div>
+        <div id="bg-top"></div>
+        <div id="bg-down"></div>
     </div>
 
-    <!-- main-content  -->
-    <div id="container">
+    <!-- main content  -->
+    <div id="container" class="clearfix">
         <!-- col-sx  -->
+        <div id="col-sx">
             <!-- user name  -->
+            <div id="user" class="clearfix">
+                <!-- content left -->
+                <div id="user-info">
+                    <!-- avatar  -->
+                    <img src="img/avatar_io.jpg" alt="Mia foto" class="avatar">
+                    <!-- user name  -->
+                    <span class="user-name">Nome Utente</span>
+                </div>
+                
+                <!-- content right  -->
+                <div class="actions">
+                    <i class="fas fa-circle-notch"></i>
+                    <i class="fas fa-comment-alt"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+            </div>
 
             <!-- notifications -->
+            <div id="notifications">
+                <!-- avatar  -->
+                <i class="fas fa-bell-slash" id="avatar-notif"></i>
+
+                <!-- text  -->
+                <div id="notifications-text">
+                    <span>Ricevi notifiche di nuovi messaggi</span>
+                    <!-- <span>Attiva notifiche desktop</span> -->
+                </div>
+
+            </div>
 
             <!-- search  -->
+            <div id="search">
+                <i class="fas fa-search"></i>
+                <span>Cerca o inizia una nuova chat</span>
+            </div>
 
             <!-- contact list  -->
-        <!-- /col-sx  -->
+            <section id="contact-list">
+                <div class="contact clearfix" >
+                    <div class="info-contact">
+                        <img src="img/avatar_1.jpg" alt="profile image" class="avatar" >
+
+                        <div class="text-container">
+                            <span>Michele</span>
+                            <div>Ultimo messaggio</div>
+                        </div>
+
+                    </div>
+
+                    <div class="chat-date">
+                        10/01/2020 16:15:22
+                    </div>
+                </div>
+
+                <div class="contact clearfix">
+                    <div class="info-contact">
+                        <img src="img/avatar_2.jpg" alt="profile image" class="avatar" >
+
+                        <div class="text-container">
+                            <span>Fabio</span>
+                            <div>Ultimo messaggio</div>
+                        </div>
+
+                    </div>
+
+                    <div class="chat-date">
+                        20/03/2020 16:35:00
+                    </div>
+                </div>
+
+                <div class="contact clearfix">
+                    <div class="info-contact">
+                        <img src="img/avatar_3.jpg" alt="profile image" class="avatar" >
+
+                        <div class="text-container">
+                            <span>Samuele</span>
+                            <div>Ultimo messaggio</div>
+                        </div>
+
+                    </div>
+
+                    <div class="chat-date">
+                        28/03/2020 16:15:22
+                    </div>
+                </div>
+
+                <div class="contact clearfix">
+                    <div class="info-contact">
+                        <img src="img/avatar_4.jpg" alt="profile image" class="avatar" >
+
+                        <div class="text-container">
+                            <span>Luisa</span>
+                            <div>Ultimo messaggio</div>
+                        </div>
+
+                    </div>
+
+                    <div class="chat-date">
+                        10/01/2020 15:50:00
+                    </div>
+                </div>
+                
+            </section>
+        </div>
 
         <!-- col-dx  -->
+        <div id="col-dx">
             <!-- user name open chat  -->
+            <div id="chat-bar">
+                <div class="user-open-chat">
+                    <!-- content left -->
+                    <div id="interlocutor-info">
+                        <!-- avatar  -->
+                        <img src="img/avatar_1.jpg" alt="foto avatar 1" class="avatar">
+                        <!-- user name  -->
+                        <span class="user-name">Nome Utente</span>
+                    </div>
+                    
+                    <!-- content right  -->
+                    <div class="actions">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
+            </div>
 
             <!-- chat  -->
+            <div id="chat">
+              
 
-            <!-- new msg  -->
-        <!-- /col-dx  -->
+            </div>
+
+            <!-- new msg.  -->
+            <div id="new-msg">
+
+            </div>
+        </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
