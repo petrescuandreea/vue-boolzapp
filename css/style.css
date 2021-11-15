@@ -1,0 +1,32 @@
+/* generali  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* background  */
+#bk-top {
+    height: 20vh;
+    background-color: rgba(2,149,136,255);
+}
+
+#bk-down {
+    height: 80vh;
+    background-color: rgba(220,219,210,255);
+}
+
+
+/* main content  */
+#container {
+    width: 90%;
+    height: 95vh;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* debug  */
+    background-color: rebeccapurple;
+   
+}
