@@ -177,17 +177,17 @@
             </div>
 
             <!-- chat  -->
-            <div id="chat" v-for="contact,i in contacts" v-if="contact.visible":key="i">
+            <div id="chat">
                 <div class="overlay">
-                    <div v-for="message,i in contact.messages" :key="i" class="message-wrapper clearfix">
-                        <div class="message" :class="message.status === 'sent' ? 'sent': 'received'">
+                    <div v-for="element in contacts[activeContact].messages" class="message-wrapper clearfix">
+                        <div class="message" :class="element.status">
                             <span class="msg-text">
-                                {{message.text}}
+                                {{element.text}}
                                 <!-- Hai portato a spasso il cane? -->
                             </span>
                             
                             <span class="msg-date">
-                                {{message.date}}
+                                {{element.date}}
                                <!-- 10/01/2020 15:30:55 -->
                            </span>
                         </div>
