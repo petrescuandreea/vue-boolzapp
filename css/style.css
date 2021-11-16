@@ -173,7 +173,6 @@
 #col-dx #chat {
     height: calc(100% - 140px);
     background-image: url("../img/bg-chat.jpg");
-    padding: 60px;
     position: relative;
 }
 
@@ -184,8 +183,9 @@
     bottom: 0;
     left: 0;
     background-color: rgba(229,221,213, 0.7);
+    padding: 60px;
 }
-s
+
 .message-wrapper {
     width: 100%;
     min-height: 40px;
