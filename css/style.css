@@ -128,7 +128,17 @@
 .contact {
     padding: 10px;
     border-top: 1px solid #e2e2e2;
+    cursor:pointer;
 }
+
+.contact:hover {
+    background-color: rgba(128, 128, 128, 0.1);
+}
+
+
+/* .contact.active {
+    background-color: gray;
+} */
 
 .contact .info-contact {
     float: left;
