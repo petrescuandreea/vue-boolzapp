@@ -60,7 +60,7 @@
 
             <!-- contact list  -->
             <section id="contact-list">
-                <div class="contact clearfix" v-for="contact,i in contacts" :key="i" @click=activeChat(i)>
+                <div class="contact clearfix" v-for="contact,i in contacts" :key="i" @click=activeChat(i) :class="i === activeContact ? 'active': ''">
                     <div class="info-contact">
                         <img :src="contact.avatar" :alt="contact.name" class="avatar" >
 
