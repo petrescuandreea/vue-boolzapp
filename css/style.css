@@ -172,10 +172,20 @@
     /* chat  */
 #col-dx #chat {
     height: calc(100% - 140px);
-    background-color: rgba(229,221,213,255);
+    background-image: url("../img/bg-chat.jpg");
     padding: 60px;
+    position: relative;
 }
 
+#col-dx .overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(229,221,213, 0.7);
+}
+s
 .message-wrapper {
     width: 100%;
     min-height: 40px;
