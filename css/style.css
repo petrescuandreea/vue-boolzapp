@@ -119,10 +119,16 @@
 
 
 /* contact list  */
+#contact-list {
+    height: calc(98% - 190px);
+    overflow-y: auto;
+}
+
 .contact {
     padding: 10px;
     border-top: 1px solid #e2e2e2;
     cursor:pointer;
+    position: relative;
 }
 
 .contact:hover {
@@ -130,9 +136,9 @@
 }
 
 
-/* .contact.active {
-    background-color: gray;
-} */
+.contact.active {
+    background-color: rgba(217 217 217);
+}
 
 .info-contact {
     float: left;
@@ -156,6 +162,9 @@
 
 .contact .chat-date {
     float: right;
+    position: absolute;
+    top: 0;
+    right: 10px;
 }
 
 
@@ -193,7 +202,9 @@
     bottom: 0;
     left: 0;
     background-color: rgba(229,221,213, 0.7);
-    padding: 60px;
+    padding: 60px 60px 0 60px;
+    overflow-y: auto;
+    
 }
 
 .message-wrapper {
@@ -204,6 +215,7 @@
 
 .message {
     width: 40%;
+    min-width: 150px;
     padding: 15px 10px 5px 15px;
     border-radius: 10px;
 }
@@ -242,6 +254,7 @@
 #col-dx #new-msg i {
     font-size: 20px;
     color: rgba(106,115,118,255);
+    margin: 5px;
 }
 
 #message-input {
