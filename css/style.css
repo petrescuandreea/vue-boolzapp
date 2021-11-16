@@ -59,22 +59,16 @@
 }
 
 /* user name  */
-#col-sx #user {
+#col-sx #user, #col-dx #chat-bar {
     height: 70px;
     background-color: rgba(234,234,234,255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #user, #chat-bar {
     padding: 0 20px 0 10px;
-    line-height: 70px;
-}
-
-#user-info, #interlocutor-info {
-    float: left;
-}
-
-.actions {
-    float: right;
 }
 
 
@@ -140,7 +134,7 @@
     background-color: gray;
 } */
 
-.contact .info-contact {
+.info-contact {
     float: left;
     display: flex;
 }
@@ -173,11 +167,17 @@
     float: left;
 }
 
+/* user name open chat  */
 #col-dx #chat-bar {
     height: 70px; 
     background-color: rgba(234,234,234,255);
     border-left: 1px solid #b6b6b6;
 }
+
+#col-dx #chat-bar img {
+    margin-right: 15px;
+}
+
 
     /* chat  */
 #col-dx #chat {
