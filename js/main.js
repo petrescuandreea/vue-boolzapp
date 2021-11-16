@@ -88,12 +88,11 @@ var boolzApp = new Vue({
 
     methods: {
         activeChat: function(i) {
-            this.contacts.find((item) => {
-                item.visible = false
-            })
-            if(this.contacts[i].visible === false) {
-                this.contacts[i].visible = true
+            for(let y = 0; y < this.contacts.length; y++){
+                this.contacts[y].visible = false;
             }
+            this.activeContact = i;
+            this.contacts[this.activeContact].visible = true;
         },
     }
 

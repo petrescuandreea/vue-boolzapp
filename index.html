@@ -21,7 +21,7 @@
         <!-- col-sx  -->
         <div id="col-sx">
             <!-- user name  -->
-            <div id="user" class="clearfix">
+            <div id="user">
                 <!-- content left -->
                 <div id="user-info">
                     <!-- avatar  -->
@@ -141,29 +141,39 @@
         <!-- col-dx  -->
         <div id="col-dx">
             <!-- user name open chat  -->
-            <div id="chat-bar" v-for="contact in contacts" v-if="contact.visible">
-                <div class="user-open-chat">
-                    <!-- content left -->
-                    <div id="interlocutor-info">
-                        <!-- avatar  -->
-                        <img :src="contact.avatar" alt="foto avatar 1" class="avatar">
+            <div id="chat-bar">
+                <!-- content left -->
+                <div class="info-contact">
+                    <img :src="contacts[activeContact].avatar" :alt="contacts[activeContact].name" class="avatar" >
 
-                        <!-- user name  -->
-                        <span class="user-name">{{contact.name}}</span>
-
-                        <!-- last seen  -->
-                        <div v-for="message in contact.messages">
-                            Ultimo accesso oggi alle {{message.date}}
-                        </div>
-                    </div>
-                    
-                    <!-- content right  -->
-                    <div class="actions">
-                        <i class="fas fa-search"></i>
-                        <i class="fas fa-paperclip"></i>
-                        <i class="fas fa-ellipsis-v"></i>
+                    <div class="text-container">
+                        <span>{{contacts[activeContact].name}}</span>
+                        <div>Ultimo accesso oggi alle... </div>
                     </div>
                 </div>
+
+
+                <!-- <div id="interlocutor-info"> -->
+                    <!-- avatar  -->
+                    <!-- <img :src="contact.avatar" alt="foto avatar 1" class="avatar"> -->
+
+                    <!-- user name  -->
+                    <!-- <span class="user-name">{{contact.name}}</span> -->
+
+                    <!-- last seen  -->
+                    <!-- <div>
+                        Ultimo accesso oggi alle...
+                    </div>
+                </div> -->
+                
+                <!-- content right  -->
+                <div class="actions">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
+                </div>
+        
+                
             </div>
 
             <!-- chat  -->
