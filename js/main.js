@@ -2,6 +2,8 @@ var boolzApp = new Vue({
     el: '#container-app',
 
     data: {
+        // RIFERIMENTO ALLA POSIZIONE DELL'OGGETTO NELL'ARRAY
+        activeContact: 0,
         contacts: [
             {
                 name: 'Michele',
@@ -28,7 +30,7 @@ var boolzApp = new Vue({
             {
                 name: 'Fabio',
                 avatar: 'img/avatar_2.jpg',
-                visible: true ,
+                visible: false ,
                 messages: [
                     {
                         date: '20/03/2020  16:30:00',
@@ -45,7 +47,7 @@ var boolzApp = new Vue({
             {
                 name: 'Samuele',
                 avatar: 'img/avatar_3.jpg',
-                visible: true ,
+                visible: false ,
                 messages: [
                     {
                         date: '28/03/2020  10:10:40',
@@ -67,7 +69,7 @@ var boolzApp = new Vue({
             {
                 name: 'Luisa',
                 avatar: 'img/avatar_4.jpg',
-                visible: true ,
+                visible: false ,
                 messages: [
                     {
                         date: '10/01/2020  15:30:55',
@@ -82,6 +84,17 @@ var boolzApp = new Vue({
                 ]
             },
         ]
+    },
+
+    methods: {
+        activeChat: function(i) {
+            this.contacts.find((item) => {
+                item.visible = false
+            })
+            if(this.contacts[i].visible === false) {
+                this.contacts[i].visible = true
+            }
+        },
     }
 
 });

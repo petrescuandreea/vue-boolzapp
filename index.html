@@ -60,18 +60,18 @@
 
             <!-- contact list  -->
             <section id="contact-list">
-                <div class="contact clearfix" v-for="contact,i in contacts" :key="i">
+                <div class="contact clearfix" v-for="contact,i in contacts" :key="i" @click=activeChat(i)>
                     <div class="info-contact">
                         <img :src="contact.avatar" :alt="contact.name" class="avatar" >
 
                         <div class="text-container">
                             <span>{{contact.name}}</span>
-                            <div>Ultimo messaggio</div>
+                            <div>{{contact.messages[contact.messages.length-1].text}}</div>
                         </div>
                     </div>
 
                     <div class="chat-date">
-                        10/01/2020 16:15:22
+                        {{contact.messages[contact.messages.length-1].date}}
                     </div>
                 </div>
 
@@ -141,14 +141,20 @@
         <!-- col-dx  -->
         <div id="col-dx">
             <!-- user name open chat  -->
-            <div id="chat-bar">
+            <div id="chat-bar" v-for="contact in contacts" v-if="contact.visible">
                 <div class="user-open-chat">
                     <!-- content left -->
                     <div id="interlocutor-info">
                         <!-- avatar  -->
-                        <img src="img/avatar_1.jpg" alt="foto avatar 1" class="avatar">
+                        <img :src="contact.avatar" alt="foto avatar 1" class="avatar">
+
                         <!-- user name  -->
-                        <span class="user-name">Nome Utente</span>
+                        <span class="user-name">{{contact.name}}</span>
+
+                        <!-- last seen  -->
+                        <div v-for="message in contact.messages">
+                            Ultimo accesso oggi alle {{message.date}}
+                        </div>
                     </div>
                     
                     <!-- content right  -->
@@ -161,10 +167,24 @@
             </div>
 
             <!-- chat  -->
-            <div id="chat">
+            <div id="chat" v-for="contact,i in contacts" v-if="contact.visible":key="i">
                 <div class="overlay">
+                    <div v-for="message,i in contact.messages" :key="i" class="message-wrapper clearfix">
+                        <div class="message" :class="message.status === 'sent' ? 'sent': 'received'">
+                            <span class="msg-text">
+                                {{message.text}}
+                                <!-- Hai portato a spasso il cane? -->
+                            </span>
+                            
+                            <span class="msg-date">
+                                {{message.date}}
+                               <!-- 10/01/2020 15:30:55 -->
+                           </span>
+                        </div>
+                    </div>
+
                     <!-- sent msg. -->
-                    <div class="message-wrapper clearfix">
+                    <!-- <div class="message-wrapper clearfix">
                         <div class="message sent">
                             <span class="msg-text">
                                 Hai portato a spasso il cane?
@@ -174,10 +194,10 @@
                                10/01/2020 15:30:55
                            </span>
                         </div>
-                    </div>
+                    </div> -->
     
                      <!-- sent msg. -->
-                    <div class="message-wrapper clearfix">
+                    <!-- <div class="message-wrapper clearfix">
                         <div class="message sent">
                             <span class="msg-text">
                                 Ricordati di dargli da mangiare 
@@ -187,10 +207,10 @@
                                 10/01/2020 15:32:00
                             </span>
                         </div>
-                    </div>
+                    </div> -->
                     
                     <!-- received msg.  -->
-                    <div class="message-wrapper clearfix">
+                    <!-- <div class="message-wrapper clearfix">
                         <div class="message received">
                             <span class="msg-text">
                                 Tutto fatto!
@@ -200,7 +220,7 @@
                                 10/01/2020 16:32:00
                             </span>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 
