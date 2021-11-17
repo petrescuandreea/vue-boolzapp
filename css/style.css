@@ -1,8 +1,18 @@
 /* general rules */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+}
+
+.user-name, #notifications-text div {
+    font-weight: 700;
 }
 
 .clearfix::after {
@@ -107,8 +117,19 @@
     margin: 10px;
     background-color: rgba(255,255,255,255);
     color: rgba(180,180,180,255);
-    line-height: 35px;
-    vertical-align: middle;
+    display: flex;
+    align-items: center;
+}
+
+#col-sx #search input {
+    max-width: 450px;
+    width: 80%;
+}
+
+#search input {
+    border: none;
+    height: 30px;
+    padding: 5px;
 }
 
 #col-sx #search .fas {
