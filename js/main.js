@@ -97,18 +97,34 @@ var boolzApp = new Vue({
         sendNewMessage: function() {
             // creo oggetto per nuovo messaggio 
             let newMessage = {
-                'date': '10/02/2020  15:30:55',
-                'text': this.newMessage,
-                'status': 'sent'
-            }
+                date: '10/02/2020  15:30:55',
+                text: this.newMessage,
+                status: 'sent'
+            };
 
             // inserisco il nuovo messaggio nell'array di messaggi 
             this.contacts[this.activeContact].messages.push(newMessage);
 
             // azzerro il valore dell'input 
             this.newMessage = '';
+
+            // risposta dall'interlocutore dopo 1s 
+            setTimeout(() => {
+                // messaggio dall'interlocutore 
+                interlocutorReply = {
+                    date: '10/02/2020  15:30:56',
+                    text: 'ok',
+                    status: 'received'
+                };
+
+                // inserisco la risposta dall'interlocutore nell'array di messaggi 
+                this.contacts[this.activeContact].messages.push(interlocutorReply);
+
+            },1000);
         },
+
+
+
+
     }
-
 });
-
