@@ -1,3 +1,5 @@
+var now = dayjs().format('DD/MM/YYYY HH:mm:ss');
+
 var boolzApp = new Vue({
     el: '#container-app',
 
@@ -95,9 +97,10 @@ var boolzApp = new Vue({
         },
 
         sendNewMessage: function() {
+            
             // creo oggetto per nuovo messaggio 
             let newMessage = {
-                date: '10/02/2020  15:30:55',
+                date: now,
                 text: this.newMessage,
                 status: 'sent'
             };
@@ -112,7 +115,7 @@ var boolzApp = new Vue({
             setTimeout(() => {
                 // messaggio dall'interlocutore 
                 interlocutorReply = {
-                    date: '10/02/2020  15:30:56',
+                    date: now,
                     text: 'ok',
                     status: 'received'
                 };
