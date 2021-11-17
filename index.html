@@ -74,67 +74,6 @@
                         {{contact.messages[contact.messages.length-1].date}}
                     </div>
                 </div>
-
-                <!-- <div class="contact clearfix" >
-                    <div class="info-contact">
-                        <img src="img/avatar_1.jpg" alt="profile image" class="avatar" >
-
-                        <div class="text-container">
-                            <span>Michele</span>
-                            <div>Ultimo messaggio</div>
-                        </div>
-                    </div>
-
-                    <div class="chat-date">
-                        10/01/2020 16:15:22
-                    </div>
-                </div>
-
-                <div class="contact clearfix">
-                    <div class="info-contact">
-                        <img src="img/avatar_2.jpg" alt="profile image" class="avatar" >
-
-                        <div class="text-container">
-                            <span>Fabio</span>
-                            <div>Ultimo messaggio</div>
-                        </div>
-                    </div>
-
-                    <div class="chat-date">
-                        20/03/2020 16:35:00
-                    </div>
-                </div>
-
-                <div class="contact clearfix">
-                    <div class="info-contact">
-                        <img src="img/avatar_3.jpg" alt="profile image" class="avatar" >
-
-                        <div class="text-container">
-                            <span>Samuele</span>
-                            <div>Ultimo messaggio</div>
-                        </div>
-                    </div>
-
-                    <div class="chat-date">
-                        28/03/2020 16:15:22
-                    </div>
-                </div>
-
-                <div class="contact clearfix">
-                    <div class="info-contact">
-                        <img src="img/avatar_4.jpg" alt="profile image" class="avatar" >
-
-                        <div class="text-container">
-                            <span>Luisa</span>
-                            <div>Ultimo messaggio</div>
-                        </div>
-                    </div>
-
-                    <div class="chat-date">
-                        10/01/2020 15:50:00
-                    </div>
-                </div> --> 
-                
             </section>
         </div>
 
@@ -148,23 +87,9 @@
 
                     <div class="text-container">
                         <span>{{contacts[activeContact].name}}</span>
-                        <div>Ultimo accesso oggi alle... </div>
+                        <div>Ultimo accesso: </div>
                     </div>
                 </div>
-
-
-                <!-- <div id="interlocutor-info"> -->
-                    <!-- avatar  -->
-                    <!-- <img :src="contact.avatar" alt="foto avatar 1" class="avatar"> -->
-
-                    <!-- user name  -->
-                    <!-- <span class="user-name">{{contact.name}}</span> -->
-
-                    <!-- last seen  -->
-                    <!-- <div>
-                        Ultimo accesso oggi alle...
-                    </div>
-                </div> -->
                 
                 <!-- content right  -->
                 <div class="actions">
@@ -183,54 +108,13 @@
                         <div class="message" :class="element.status">
                             <span class="msg-text">
                                 {{element.text}}
-                                <!-- Hai portato a spasso il cane? -->
                             </span>
                             
                             <span class="msg-date">
                                 {{element.date}}
-                               <!-- 10/01/2020 15:30:55 -->
                            </span>
                         </div>
                     </div>
-
-                    <!-- sent msg. -->
-                    <!-- <div class="message-wrapper clearfix">
-                        <div class="message sent">
-                            <span class="msg-text">
-                                Hai portato a spasso il cane?
-                            </span>
-                            
-                            <span class="msg-date">
-                               10/01/2020 15:30:55
-                           </span>
-                        </div>
-                    </div> -->
-    
-                     <!-- sent msg. -->
-                    <!-- <div class="message-wrapper clearfix">
-                        <div class="message sent">
-                            <span class="msg-text">
-                                Ricordati di dargli da mangiare 
-                            </span>
-                            
-                            <span class="msg-date">
-                                10/01/2020 15:32:00
-                            </span>
-                        </div>
-                    </div> -->
-                    
-                    <!-- received msg.  -->
-                    <!-- <div class="message-wrapper clearfix">
-                        <div class="message received">
-                            <span class="msg-text">
-                                Tutto fatto!
-                            </span>
-                            
-                            <span class="msg-date">
-                                10/01/2020 16:32:00
-                            </span>
-                        </div>
-                    </div> -->
                 </div>
             </div>
 
@@ -240,7 +124,7 @@
                 <i class="far fa-smile"></i>
 
                 <!-- write a new message  -->
-                <input id="message-input"type="text" placeholder="Scrivi un messaggio">
+                <input id="message-input" type="text" placeholder="Scrivi un messaggio">
 
                 <!-- microphone -->
                 <i class="fas fa-microphone"></i>
@@ -248,6 +132,8 @@
         </div>
     </div>
 
+   
+    
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>

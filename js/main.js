@@ -30,7 +30,7 @@ var boolzApp = new Vue({
             {
                 name: 'Fabio',
                 avatar: 'img/avatar_2.jpg',
-                visible: false ,
+                visible: true ,
                 messages: [
                     {
                         date: '20/03/2020  16:30:00',
@@ -47,7 +47,7 @@ var boolzApp = new Vue({
             {
                 name: 'Samuele',
                 avatar: 'img/avatar_3.jpg',
-                visible: false ,
+                visible: true ,
                 messages: [
                     {
                         date: '28/03/2020  10:10:40',
@@ -69,7 +69,7 @@ var boolzApp = new Vue({
             {
                 name: 'Luisa',
                 avatar: 'img/avatar_4.jpg',
-                visible: false ,
+                visible: true ,
                 messages: [
                     {
                         date: '10/01/2020  15:30:55',
@@ -79,7 +79,7 @@ var boolzApp = new Vue({
                     {
                         date: '10/01/2020  15:50:00',
                         text: 'Sì, ma preferirei andare al cinema',
-                        status: 'sentreceived'
+                        status: 'received'
                     }
                 ]
             },
@@ -88,12 +88,9 @@ var boolzApp = new Vue({
 
     methods: {
         activeChat: function(i) {
-            for(let y = 0; y < this.contacts.length; y++){
-                this.contacts[y].visible = false;
-            }
             this.activeContact = i;
-            this.contacts[this.activeContact].visible = true;
         },
     }
 
 });
+
