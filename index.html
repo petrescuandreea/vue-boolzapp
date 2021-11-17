@@ -124,7 +124,7 @@
                 <i class="far fa-smile"></i>
 
                 <!-- write a new message  -->
-                <input id="message-input" type="text" placeholder="Scrivi un messaggio">
+                <input id="message-input" type="text" placeholder="Scrivi un messaggio" v-model="newMessage" @keyup.enter="sendNewMessage">
 
                 <!-- microphone -->
                 <i class="fas fa-microphone"></i>

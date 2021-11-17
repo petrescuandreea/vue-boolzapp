@@ -4,6 +4,9 @@ var boolzApp = new Vue({
     data: {
         // RIFERIMENTO ALLA POSIZIONE DELL'OGGETTO NELL'ARRAY
         activeContact: 0,
+
+        newMessage: '',
+
         contacts: [
             {
                 name: 'Michele',
@@ -89,6 +92,21 @@ var boolzApp = new Vue({
     methods: {
         activeChat: function(i) {
             this.activeContact = i;
+        },
+
+        sendNewMessage: function() {
+            // creo oggetto per nuovo messaggio 
+            let newMessage = {
+                'date': '10/02/2020  15:30:55',
+                'text': this.newMessage,
+                'status': 'sent'
+            }
+
+            // inserisco il nuovo messaggio nell'array di messaggi 
+            this.contacts[this.activeContact].messages.push(newMessage);
+
+            // azzerro il valore dell'input 
+            this.newMessage = '';
         },
     }
 
