@@ -55,12 +55,12 @@
             <!-- search  -->
             <div id="search">
                 <i class="fas fa-search"></i>
-                <span>Cerca o inizia una nuova chat</span>
+                <input v-model="search" type="text" placeholder="Cerca o inizia una nuova chat">
             </div>
 
             <!-- contact list  -->
             <section id="contact-list">
-                <div class="contact clearfix" v-for="contact,i in contacts" :key="i" @click=activeChat(i) :class="i === activeContact ? 'active': ''">
+                <div class="contact clearfix" v-for="contact,i in contacts" v-if="contact.name.toLowerCase().includes(search.toLowerCase())"  :key="i" @click=activeChat(i) :class="i === activeContact ? 'active': ''">
                     <div class="info-contact">
                         <img :src="contact.avatar" :alt="contact.name" class="avatar" >
 

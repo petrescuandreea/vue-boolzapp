@@ -2,11 +2,10 @@ var boolzApp = new Vue({
     el: '#container-app',
 
     data: {
+        search: '',
         // RIFERIMENTO ALLA POSIZIONE DELL'OGGETTO NELL'ARRAY
         activeContact: 0,
-
         newMessage: '',
-
         contacts: [
             {
                 name: 'Michele',
@@ -86,6 +85,7 @@ var boolzApp = new Vue({
                     }
                 ]
             },
+            
         ]
     },
 
