@@ -7,7 +7,16 @@ var boolzApp = new Vue({
         search: '',
         // RIFERIMENTO ALLA POSIZIONE DELL'OGGETTO NELL'ARRAY
         activeContact: 0,
+
+        // PROPRIETA USATA PER MENU A TENDINA MESSAGGI 
+        visibleMenu : false, 
+
+        // PROPRIETA CHE MI SALVA IL NUOVO MESSAGGIO 
         newMessage: '',
+
+        // RIFERIMENTO ALLA POSIZIONE DEL MESSAGGIO 
+        activeMessage: 0,
+    
         contacts: [
             {
                 name: 'Michele',
@@ -114,7 +123,7 @@ var boolzApp = new Vue({
             // risposta dall'interlocutore dopo 1s 
             setTimeout(() => {
                 // messaggio dall'interlocutore 
-                interlocutorReply = {
+                let interlocutorReply = {
                     date: now,
                     text: 'ok',
                     status: 'received'
@@ -126,8 +135,13 @@ var boolzApp = new Vue({
             },1000);
         },
 
-
-
+        showMenu: function() {
+            if(this.visibleMenu === true) {
+                this.visibleMenu = false;
+            } else  {
+                this.visibleMenu = true;
+            }
+        },
 
     }
 });
