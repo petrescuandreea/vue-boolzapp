@@ -74,6 +74,7 @@
                         {{contact.messages[contact.messages.length-1].date}}
                     </div>
                 </div>
+                
             </section>
         </div>
 
@@ -104,14 +105,24 @@
             <!-- chat  -->
             <div id="chat">
                 <div class="overlay">
-                    <div v-for="element in contacts[activeContact].messages" class="message-wrapper clearfix">
-                        <div class="message" :class="element.status">
+                    <div v-for="message,j in contacts[activeContact].messages" :mykey="j" class="message-wrapper clearfix">
+                        <div class="message" :class="message.status">
+
+                            <!-- AL CLICK RICHIAMO LA FUNZIONE E ASSEGNO ALLA PROPRIETA activeMessage LA POSIZIONE DEL MESSAGGIO -->
+                            <i @click="showMenu() , activeMessage = j" class="fas fa-angle-down"></i>
+
+                            <!-- GESTISCO LA VISIBILITA DEL MENU A TENDINA -->
+                            <ul v-if="activeMessage === j" :class="visibleMenu === true ? 'dblock' : ''" id="drop-down-menu">
+                                <li>Message info</li>
+                                <li>Delete message</li>
+                            </ul>
+
                             <span class="msg-text">
-                                {{element.text}}
+                                {{message.text}}
                             </span>
                             
                             <span class="msg-date">
-                                {{element.date}}
+                                {{message.date}}
                            </span>
                         </div>
                     </div>
