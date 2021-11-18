@@ -103,8 +103,11 @@ var boolzApp = new Vue({
     methods: {
         activeChat: function(i) {
             this.activeContact = i;
+            // resetto i valori 
             this.activeMessage = -1;
-            this.visibleMenu = false
+            this.visibleMenu = false;
+            // svuoto input 
+            this.newMessage = ''
         },
 
         sendNewMessage: function() {
