@@ -239,7 +239,46 @@ body {
     min-width: 150px;
     padding: 15px 10px 5px 15px;
     border-radius: 10px;
+    position: relative;
 }
+
+.message i {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: grey;
+    display: none;
+    cursor: pointer;
+}
+
+.message:hover i{
+    display: inline;
+}
+
+#drop-down-menu {
+    background-color: #f1f1f1;
+    max-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    position: absolute;
+    top: 30px;
+    right: 15px;
+    z-index: 1;
+    display: none;
+}
+
+#drop-down-menu.dblock{
+    display: block;
+}
+
+#drop-down-menu li {
+    padding: 10px 15px;
+    display: block;
+}
+
+#drop-down-menu li:hover {
+    background-color: #ddd;
+    cursor: pointer;
+} 
 
 .sent {
     float: right;
