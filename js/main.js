@@ -15,7 +15,7 @@ var boolzApp = new Vue({
         newMessage: '',
 
         // RIFERIMENTO ALLA POSIZIONE DEL MESSAGGIO 
-        activeMessage: 0,
+        activeMessage: -1,
     
         contacts: [
             {
@@ -103,6 +103,8 @@ var boolzApp = new Vue({
     methods: {
         activeChat: function(i) {
             this.activeContact = i;
+            this.activeMessage = -1;
+            this.visibleMenu = false
         },
 
         sendNewMessage: function() {
@@ -134,13 +136,20 @@ var boolzApp = new Vue({
 
             },1000);
         },
-
-        showMenu: function() {
+        
+        showMenu: function(j) {
             if(this.visibleMenu === true) {
                 this.visibleMenu = false;
+                this.activeMessage= -1;
             } else  {
                 this.visibleMenu = true;
+                this.activeMessage = j;
             }
+        },
+
+        deleteMessage: function(index) {
+            this.contacts[this.activeContact].messages.splice(index,1);
+            this.activeMessage = false;
         },
 
     }
