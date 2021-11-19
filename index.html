@@ -112,7 +112,7 @@
             <div id="chat">
                 <div class="overlay">
                     <!-- MILESTONE 2.1 - visualizzazione dinamica dei messaggi  -->
-                    <div v-for="message,j in contacts[activeContact].messages" :mykey="j" class="message-wrapper clearfix">
+                    <div v-for="message,j in contacts[activeContact].messages" :key="j" class="message-wrapper clearfix">
                         <div class="message" :class="message.status">
                             <span class="msg-text">
                                 {{message.text}}
