@@ -8,15 +8,15 @@ var boolzApp = new Vue({
         // RIFERIMENTO ALLA POSIZIONE DELL'OGGETTO NELL'ARRAY
         activeContact: 0,
 
-        // PROPRIETA USATA PER MENU A TENDINA MESSAGGI 
+        // PROPRIETA' USATA PER MENU A TENDINA MESSAGGI 
         visibleMenu : false, 
 
-        // PROPRIETA CHE MI SALVA IL NUOVO MESSAGGIO 
+        // PROPRIETA' CHE MI SALVA IL NUOVO MESSAGGIO 
         newMessage: '',
 
         // RIFERIMENTO ALLA POSIZIONE DEL MESSAGGIO 
         activeMessage: -1,
-    
+        
         contacts: [
             {
                 name: 'Michele',
@@ -101,6 +101,7 @@ var boolzApp = new Vue({
     },
 
     methods: {
+        // MILESTONE 2.2 - funzione click sul contatto che mostra la relativa conversazione 
         activeChat: function(i) {
             this.activeContact = i;
             // resetto i valori 
@@ -111,7 +112,7 @@ var boolzApp = new Vue({
         },
 
         sendNewMessage: function() {
-            
+            // MILESTONE 3.1 - funzione per aggiungere nuovo messaggio 
             // creo oggetto per nuovo messaggio 
             let newMessage = {
                 date: now,
@@ -125,7 +126,7 @@ var boolzApp = new Vue({
             // azzerro il valore dell'input 
             this.newMessage = '';
 
-            // risposta dall'interlocutore dopo 1s 
+            // MILESTONE 3.2 - risposta dall'interlocutore dopo 1s 
             setTimeout(() => {
                 // messaggio dall'interlocutore 
                 let interlocutorReply = {
@@ -140,6 +141,7 @@ var boolzApp = new Vue({
             },1000);
         },
         
+        // funzione per mostrare menu' a tendina messaggio 
         showMenu: function(j) {
             if(this.visibleMenu === true) {
                 this.visibleMenu = false;
@@ -150,6 +152,7 @@ var boolzApp = new Vue({
             }
         },
 
+        // funzione per eliminare il messaggio su cui si è cliccato
         deleteMessage: function(index) {
             this.contacts[this.activeContact].messages.splice(index,1);
             this.activeMessage = false;
