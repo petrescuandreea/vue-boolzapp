@@ -15,7 +15,7 @@ var boolzApp = new Vue({
         newMessage: '',
 
         // RIFERIMENTO ALLA POSIZIONE DEL MESSAGGIO 
-        activeMessage: -1,
+        activeMessage: 0,
         
         contacts: [
             {
@@ -103,9 +103,10 @@ var boolzApp = new Vue({
     methods: {
         // MILESTONE 2.2 - funzione click sul contatto che mostra la relativa conversazione 
         activeChat: function(i) {
+            // assegnando a activeChat l'indice di posizione dell'oggetto nell'array definisco quale sarà la chat attiva 
             this.activeContact = i;
             // resetto i valori 
-            this.activeMessage = -1;
+            this.activeMessage = 0;
             this.visibleMenu = false;
             // svuoto input 
             this.newMessage = ''
@@ -143,9 +144,10 @@ var boolzApp = new Vue({
         
         // funzione per mostrare menu' a tendina messaggio 
         showMenu: function(j) {
+            // se il menu a tendina è visibile, al click lo rendo invisibile, in caso contrario lo rendo visibile 
             if(this.visibleMenu === true) {
                 this.visibleMenu = false;
-                this.activeMessage= -1;
+                this.activeMessage = j;
             } else  {
                 this.visibleMenu = true;
                 this.activeMessage = j;
@@ -155,7 +157,10 @@ var boolzApp = new Vue({
         // funzione per eliminare il messaggio su cui si è cliccato
         deleteMessage: function(index) {
             this.contacts[this.activeContact].messages.splice(index,1);
-            this.activeMessage = false;
+            this.visibleMenu = false;
+
+            // assegno ad activeMessage l'indice di posizione dell'oggetto (message) nell'array (messages) per capire quale messaggio eliminare
+            this.activeMessage = index
         },
 
     }

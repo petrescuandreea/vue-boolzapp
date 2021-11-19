@@ -60,8 +60,12 @@
 
             <!-- contact list  -->
             <section id="contact-list">
-                <!-- MILESTONE 1.2 - visualizzazione dinamica lista contatti -> v-for -->
-                <!-- MILESTONE 4 - ricerca utenti -> v-if  -->
+                <!-- MILESTONE 1.2 - visualizzazione dinamica lista contatti -> v-for 
+                -> con loperatore ternario aggingo la classe active solo quando la i combacia con activeContact , in questo modo la classe sarà aggiunta solo sull'elemento che ha l'indice selezionato -->
+
+                <!-- MILESTONE 2.2 - al click sul singolo contatto visualizzo la conversazione relativa -> aggancio all'elemento l'evento click e associo la funzione activeChat  -->
+
+                <!-- MILESTONE 4 - ricerca utenti -> v-if  :confronto due stringhe : la stringa name di ogni contatto con il valore inserito dall'utente e salvato in search -->
                 <div class="contact clearfix" v-for="contact,i in contacts" v-if="contact.name.toLowerCase().includes(search.toLowerCase())"  :key="i" @click="activeChat(i)" :class="i === activeContact ? 'active': ''">
                     <div class="info-contact">
                         <img :src="contact.avatar" :alt="contact.name" class="avatar" >
@@ -108,7 +112,7 @@
             <div id="chat">
                 <div class="overlay">
                     <!-- MILESTONE 2.1 - visualizzazione dinamica dei messaggi  -->
-                    <div v-for="message,j in contacts[activeContact].messages" :key="j" class="message-wrapper clearfix">
+                    <div v-for="message,j in contacts[activeContact].messages" :mykey="j" class="message-wrapper clearfix">
                         <div class="message" :class="message.status">
                             <span class="msg-text">
                                 {{message.text}}
