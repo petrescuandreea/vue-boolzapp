@@ -192,6 +192,13 @@ body {
     font-weight: bold;
 }
 
+#contact-list .text-container div {
+    width: 150px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .text-container div,
 .chat-date {
     font-size: 15px;
